@@ -19,7 +19,17 @@ typedef NS_ENUM(NSInteger,LZRequestStylle) {
 
 @interface LZHttpRequest : NSObject
 
-
+/**
+ *  请求网络数据
+ *
+ *  @param requestURL   URL
+ *  @param requestStyle 请求类型
+ *  @param parmas       参数
+ *  @param files        请求文件(图片)
+ *  @param success      请求成功的block
+ *  @param fail         请求失败的block
+ *  @param cacheTimer   缓存时间-以秒算
+ */
 + (void)requestURL:(NSString *)requestURL
         httpMethod:(LZRequestStylle)requestStyle
             params:(NSDictionary *)parmas

@@ -1,20 +1,28 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DE869395E2C719A1C7EE2CC5B4B22819BD904BB9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "d3b33442-203a-4b98-a023-85834f8d8bd5++4837" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "d3b33442-203a-4b98-a023-85834f8d8bd5++4837" : 0
+    "d3b33442-203a-4b98-a023-85834f8d8bd5++4837" : 0,
+    "DE869395E2C719A1C7EE2CC5B4B22819BD904BB9" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "083557AC-BC6A-4CF2-8DF1-89368154D68E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "d3b33442-203a-4b98-a023-85834f8d8bd5++4837" : "LZAFRequest\/LZAFRequest\/MD5\/"
+    "d3b33442-203a-4b98-a023-85834f8d8bd5++4837" : "LZAFRequest\/LZAFRequest\/MD5\/",
+    "DE869395E2C719A1C7EE2CC5B4B22819BD904BB9" : "LZAFRequest\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "LZAFRequest",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LZAFRequest.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zhen-li-xing\/LZAFRequest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE869395E2C719A1C7EE2CC5B4B22819BD904BB9"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.88.8\/qfproj",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
