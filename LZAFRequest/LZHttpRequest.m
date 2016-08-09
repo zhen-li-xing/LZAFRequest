@@ -16,7 +16,7 @@
               file:(NSDictionary *)files
            success:(void (^)(id data))success
               fail:(void (^)(NSError *error))fail
-        cacheTimer:(NSInteger)cacheTimer{
+        cacheTimer:(NSInteger)cacheTimer WithLZCacheStyle:(LZCacheStyle)cacheStyle{
     
     //判断是否存在缓存,根据接口
     //获取单例
@@ -50,8 +50,11 @@
                  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                      if (success)
                      {
-                         //先将接口数据保存到缓存中
-                        [[LZCache shareInstance] saveWithData:responseObject andNameString:requestURL];
+                         if (cacheStyle == LZCacheYES) {
+                             //先将接口数据保存到缓存中
+                             [[LZCache shareInstance] saveWithData:responseObject andNameString:requestURL];
+                         }
+                         
                          
                          success(responseObject);
                      }
@@ -72,8 +75,10 @@
                      }
                       success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                           if (success) {
-                              //先将接口数据保存到缓存中
-                              [[LZCache shareInstance] saveWithData:responseObject andNameString:requestURL];
+                              if (cacheStyle == LZCacheYES) {
+                                  //先将接口数据保存到缓存中
+                                  [[LZCache shareInstance] saveWithData:responseObject andNameString:requestURL];
+                              }
                               
                               success(responseObject);
                           }
@@ -122,8 +127,10 @@
         
         if (success) {
             
-            //先将接口数据保存到缓存中
-            [[LZCache shareInstance] saveWithData:responseObject andNameString:requestURL];
+            if (cacheStyle == LZCacheYES) {
+                //先将接口数据保存到缓存中
+                [[LZCache shareInstance] saveWithData:responseObject andNameString:requestURL];
+            }
             
             success(responseObject);
         }
@@ -141,11 +148,7 @@
 
         }
         
-        
-        
     }
-    
-    
     
     
     

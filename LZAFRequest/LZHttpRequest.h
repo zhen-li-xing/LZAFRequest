@@ -17,6 +17,14 @@ typedef NS_ENUM(NSInteger,LZRequestStylle) {
     LZRequestStyllePOST,
 };
 
+
+typedef NS_ENUM(NSInteger,LZCacheStyle) {
+    //做缓存
+    LZCacheYES = 0,
+    //不做缓存
+    LZCacheNO,
+};
+
 @interface LZHttpRequest : NSObject
 
 /**
@@ -30,13 +38,17 @@ typedef NS_ENUM(NSInteger,LZRequestStylle) {
  *  @param fail         请求失败的block
  *  @param cacheTimer   缓存时间-以秒算
  */
+
 + (void)requestURL:(NSString *)requestURL
         httpMethod:(LZRequestStylle)requestStyle
             params:(NSDictionary *)parmas
               file:(NSDictionary *)files
            success:(void (^)(id data))success
               fail:(void (^)(NSError *error))fail
-        cacheTimer:(NSInteger)cacheTimer;
+        cacheTimer:(NSInteger)cacheTimer WithLZCacheStyle:(LZCacheStyle)cacheStyle;
+
+
+
 
 
 
