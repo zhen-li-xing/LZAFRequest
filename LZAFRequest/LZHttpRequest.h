@@ -37,6 +37,7 @@ typedef NS_ENUM(NSInteger,LZCacheStyle) {
  *  @param success      请求成功的block
  *  @param fail         请求失败的block
  *  @param cacheTimer   缓存时间-以秒算
+ *  @param cacheStyle   是否使用缓存
  */
 
 + (void)requestURL:(NSString *)requestURL
