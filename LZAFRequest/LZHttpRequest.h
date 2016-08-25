@@ -49,6 +49,13 @@ typedef NS_ENUM(NSInteger,LZCacheStyle) {
         cacheTimer:(NSInteger)cacheTimer WithLZCacheStyle:(LZCacheStyle)cacheStyle;
 
 
++ (void)requestURL:(NSString *)requestURL
+        httpMethod:(LZRequestStylle)requestStyle
+            params:(NSDictionary *)parmas
+              file:(NSDictionary *)files
+           success:(void (^)(id data))success
+              fail:(void (^)(NSError *error))fail;
+
 
 
 

@@ -15,6 +15,15 @@
             params:(NSDictionary *)parmas
               file:(NSDictionary *)files
            success:(void (^)(id data))success
+              fail:(void (^)(NSError *error))fail{
+    [self requestURL:requestURL httpMethod:requestStyle params:parmas file:files success:success fail:fail cacheTimer:0 WithLZCacheStyle:LZCacheNO];
+}
+
++ (void)requestURL:(NSString *)requestURL
+        httpMethod:(LZRequestStylle)requestStyle
+            params:(NSDictionary *)parmas
+              file:(NSDictionary *)files
+           success:(void (^)(id data))success
               fail:(void (^)(NSError *error))fail
         cacheTimer:(NSInteger)cacheTimer WithLZCacheStyle:(LZCacheStyle)cacheStyle{
     
