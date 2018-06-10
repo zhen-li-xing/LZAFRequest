@@ -16,7 +16,7 @@
 		B72359261D45C25C0057E08D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B72359241D45C25C0057E08D /* LaunchScreen.storyboard */; };
 		B72359311D45C25C0057E08D /* LZAFRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B72359301D45C25C0057E08D /* LZAFRequestTests.m */; };
 		B723593C1D45C25C0057E08D /* LZAFRequestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B723593B1D45C25C0057E08D /* LZAFRequestUITests.m */; };
-		B723594B1D45DC640057E08D /* LZHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B723594A1D45DC640057E08D /* LZHttpRequest.m */; };
+		B723594B1D45DC640057E08D /* NetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = B723594A1D45DC640057E08D /* NetWork.m */; };
 		B7D84F431D58554F0090FE12 /* LZCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D84F421D58554F0090FE12 /* LZCache.m */; };
 		B7D84F471D5855EB0090FE12 /* NSString+Hashing.m in Sources */ = {isa = PBXBuildFile; fileRef = B7D84F461D5855EB0090FE12 /* NSString+Hashing.m */; };
 		B8F1A3B3BB292EB1A3728837 /* libPods-LZAFRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C620133E379FA306FA21594 /* libPods-LZAFRequest.a */; };
@@ -63,8 +63,8 @@
 		B72359371D45C25C0057E08D /* LZAFRequestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LZAFRequestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B723593B1D45C25C0057E08D /* LZAFRequestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZAFRequestUITests.m; sourceTree = "<group>"; };
 		B723593D1D45C25C0057E08D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B72359491D45DC640057E08D /* LZHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHttpRequest.h; sourceTree = "<group>"; };
-		B723594A1D45DC640057E08D /* LZHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZHttpRequest.m; sourceTree = "<group>"; };
+		B72359491D45DC640057E08D /* NetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWork.h; sourceTree = "<group>"; };
+		B723594A1D45DC640057E08D /* NetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWork.m; sourceTree = "<group>"; };
 		B74C72E37FC00D535B73068F /* libPods-LZAFRequestUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LZAFRequestUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D84F411D58554F0090FE12 /* LZCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCache.h; sourceTree = "<group>"; };
 		B7D84F421D58554F0090FE12 /* LZCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCache.m; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 				B723591A1D45C25C0057E08D /* AppDelegate.m */,
 				B723591C1D45C25C0057E08D /* ViewController.h */,
 				B723591D1D45C25C0057E08D /* ViewController.m */,
-				B72359491D45DC640057E08D /* LZHttpRequest.h */,
-				B723594A1D45DC640057E08D /* LZHttpRequest.m */,
+				B72359491D45DC640057E08D /* NetWork.h */,
+				B723594A1D45DC640057E08D /* NetWork.m */,
 				B7D84F411D58554F0090FE12 /* LZCache.h */,
 				B7D84F421D58554F0090FE12 /* LZCache.m */,
 				B723591F1D45C25C0057E08D /* Main.storyboard */,
@@ -214,8 +214,6 @@
 				B723590F1D45C25C0057E08D /* Sources */,
 				B72359101D45C25C0057E08D /* Frameworks */,
 				B72359111D45C25C0057E08D /* Resources */,
-				B20D8A721F3DD6ADE685A17C /* [CP] Embed Pods Frameworks */,
-				50204880F158FD5FD6FAFA1B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,8 +232,6 @@
 				B72359281D45C25C0057E08D /* Sources */,
 				B72359291D45C25C0057E08D /* Frameworks */,
 				B723592A1D45C25C0057E08D /* Resources */,
-				F135FB32E506710E74967661 /* [CP] Embed Pods Frameworks */,
-				7B25BB31F0A46347624B3D41 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -255,7 +251,6 @@
 				B72359331D45C25C0057E08D /* Sources */,
 				B72359341D45C25C0057E08D /* Frameworks */,
 				B72359351D45C25C0057E08D /* Resources */,
-				0919A20B97F1D89F5D8F4970 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,64 +332,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0919A20B97F1D89F5D8F4970 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZAFRequestUITests/Pods-LZAFRequestUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3249D887FDF467579AD97A4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LZAFRequestUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		50204880F158FD5FD6FAFA1B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZAFRequest/Pods-LZAFRequest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B25BB31F0A46347624B3D41 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZAFRequestTests/Pods-LZAFRequestTests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A200D6E46B920A1F7641CADE /* [CP] Check Pods Manifest.lock */ = {
@@ -403,28 +356,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LZAFRequest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B20D8A721F3DD6ADE685A17C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZAFRequest/Pods-LZAFRequest-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EA581E5669DE3DE64CBD0C93 /* [CP] Check Pods Manifest.lock */ = {
@@ -433,28 +374,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LZAFRequestTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F135FB32E506710E74967661 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LZAFRequestTests/Pods-LZAFRequestTests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -467,7 +396,7 @@
 				B7D84F471D5855EB0090FE12 /* NSString+Hashing.m in Sources */,
 				B7D84F431D58554F0090FE12 /* LZCache.m in Sources */,
 				B723591E1D45C25C0057E08D /* ViewController.m in Sources */,
-				B723594B1D45DC640057E08D /* LZHttpRequest.m in Sources */,
+				B723594B1D45DC640057E08D /* NetWork.m in Sources */,
 				B723591B1D45C25C0057E08D /* AppDelegate.m in Sources */,
 				B72359181D45C25C0057E08D /* main.m in Sources */,
 			);
@@ -614,6 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LZAFRequest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.afcatstar.www.LZAFRequest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -626,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LZAFRequest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.com.afcatstar.www.LZAFRequest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
